@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+  @apply fixed top-0 right-0 left-0 w-full z-50 bg-blue-600 text-white py-4 px-8 shadow flex items-center justify-between;
+}
+
+.header .logo {
+  @apply flex items-center gap-2;
+}
+
+.header .logo img {
+  @apply w-8 h-8;
+}
+
+.header .logo span {
+  @apply text-xl font-bold;
+}
+
+.header .search {
+  @apply flex-1 mx-8;
+}
+
+.header .search input {
+  @apply w-full rounded-md px-3 py-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-300;
+}
+
+.header .icons {
+  @apply flex items-center gap-6;
+}
+
+.header .icons button {
+  @apply hover:text-blue-200 transition;
+}
+
+.header .icons svg {
+  @apply w-6 h-6;
+}
+
+.container {
+  @apply pt-28;
+}
