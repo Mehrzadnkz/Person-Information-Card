@@ -1,56 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Gulzar&family=Vazirmatn:wght@100..900&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@layer base {
+  :root {
+    --font-family: "Gulzar", "Vazirmatn", "serif";
+    --font-size: 4.5mm;
+    --box-sizing: border-box;
+  }
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.05;
+  background: url("./assets/images/logo.png");
+  background-color: rgb(255, 255, 255);
+  background-size: 250px;
+  transform: rotate(-8deg) scale(1.35);
+  animation: slide 30s linear infinite;
+  pointer-events: none;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100vh 100vh;
+  }
 }
 
 .header {
-  @apply fixed top-0 right-0 left-0 w-full z-50 bg-blue-600 text-white py-4 px-8 shadow flex items-center justify-between;
+  @apply flex items-center justify-between bg-neutral-400 text-sm font-semibold px-4;
 }
 
-.header .logo {
-  @apply flex items-center gap-2;
+#header-elements {
+  @apply flex items-center flex-row border border-red-500 p-2;
+}
+.header-logo {
+  @apply border-2 border-green-500 w-16 h-10;
 }
 
-.header .logo img {
-  @apply w-8 h-8;
+#header-elements:nth-child(3) {
+  @apply gap-3;
 }
 
-.header .logo span {
-  @apply text-xl font-bold;
+#header-elements button {
+  @apply border border-gray-500 cursor-pointer p-1;
+
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
 }
 
-.header .search {
-  @apply flex-1 mx-8;
-}
-
-.header .search input {
-  @apply w-full rounded-md px-3 py-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-300;
-}
-
-.header .icons {
-  @apply flex items-center gap-6;
-}
-
-.header .icons button {
-  @apply hover:text-blue-200 transition;
-}
-
-.header .icons svg {
-  @apply w-6 h-6;
-}
-
-.container {
-  @apply pt-28;
+#header-elements button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
