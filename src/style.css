@@ -9,6 +9,10 @@
     --box-sizing: border-box;
   }
 }
+#app {
+  @apply min-h-screen min-w-screen;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -41,10 +45,10 @@ body {
 }
 
 #header-elements {
-  @apply flex items-center flex-row border border-red-500 p-2;
+  @apply flex items-center flex-row p-2;
 }
 .header-logo {
-  @apply border-2 border-green-500 w-16 h-10;
+  @apply w-16 h-10;
 }
 
 #header-elements:nth-child(3) {
@@ -60,4 +64,12 @@ body {
 
 #header-elements button:hover {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  @apply min-w-screen;
+}
+
+.user-cards {
+  @apply border-2 border-green-500 mx-3 mt-6 p-4 h-[80vh];
 }
