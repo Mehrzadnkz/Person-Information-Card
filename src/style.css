@@ -71,7 +71,7 @@ body {
 }
 
 .user-cards {
-  @apply mx-3 mt-6 p-4 h-[80vh] flex flex-wrap justify-center gap-4;
+  @apply mx-3 mt-6 p-4 h-[80vh] flex flex-wrap flex-row justify-center gap-4;
 }
 
 .user-card {
