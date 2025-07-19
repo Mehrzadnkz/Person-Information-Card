@@ -56,7 +56,7 @@ body {
 }
 
 #header-elements button {
-  @apply border border-gray-500 cursor-pointer p-1;
+  @apply border border-gray-500 cursor-pointer p-1 rounded-sm;
 
   background-color: rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s ease;
@@ -71,5 +71,17 @@ body {
 }
 
 .user-cards {
-  @apply border-2 border-green-500 mx-3 mt-6 p-4 h-[80vh];
+  @apply mx-3 mt-6 p-4 h-[80vh] flex flex-wrap justify-center gap-4;
+}
+
+.user-card {
+  width: calc((100% / var(--cards-per-row)) - 32px);
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .user-card {
+    width: 100%;
+  }
 }

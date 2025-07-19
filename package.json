@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "ajax": "^0.0.4",
     "tailwindcss": "^4.1.11",
     "vite": "^7.0.5"
   }
