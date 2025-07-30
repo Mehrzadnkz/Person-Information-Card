@@ -67,8 +67,8 @@ Object.defineProperty(window, 'Admin', {
       userCards.textContent = '';
       GiveIn_formation_From_API();
     }
-    else if (Admin !== ) {
-      console.log('Admin Is On');
+    else if (Admin !== 1) {
+      console.log('Admin Is Off');
       userCards.textContent = '';
       GiveIn_formation_From_API();
     }
@@ -80,8 +80,6 @@ const GiveIn_formation_From_API = () => {
     .then(response => response.json())
     .then(users => {
       let cardsPerRow;
-      console.log(users.length);
-
       if (!isNaN(users.length)) {
         if ((users.length) % 3 === 0) {
           cardsPerRow = 3;
